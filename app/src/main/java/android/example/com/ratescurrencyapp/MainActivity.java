@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -18,20 +19,19 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RatesAdapter.RateClickListener{
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private final static String JSON_URL = "https://api.fixer.io/latest";
     private Currency currency;
-    private Context mContext;
     RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    ArrayList<Rate> arrayList;
+    private RatesAdapter mAdapter;
 
 
     @Override
@@ -39,20 +39,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContext = getApplicationContext();
-
         mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         loadCurrencyRates();
 
-
         // Define a layout for RecyclerView
-        mLayoutManager = new GridLayoutManager(mContext,3);
+        mRecyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this,3);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Initialize a new instance of RecyclerView Adapter instance
-        mAdapter = new RatesAdapter(mContext,arrayList);
+        mAdapter = new RatesAdapter(this, this);
 
         // Set the adapter for RecyclerView
         mRecyclerView.setAdapter(mAdapter);
@@ -73,11 +71,12 @@ public class MainActivity extends AppCompatActivity {
                             Iterator<String> keys = ratesJSON.keys();
                             while (keys.hasNext()){
                                 String key = keys.next();
-                                currency.addRate(new Rate(key, ratesJSON.getDouble(key)));
+                                Rate rate = new Rate(key, ratesJSON.getDouble(key));
+                                currency.addRate(rate);
                             }
 
-                            RatesAdapter adapter = new RatesAdapter(mContext, arrayList);
-                            arrayList = currency.getRates();
+                            ArrayList<Rate> rates = currency.getRates();
+                            mAdapter.updateData(rates);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -93,5 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onRateItemClick(Rate rate){
+        Log.d(TAG, "onRateItemClick: " + rate.toString());
     }
 }

@@ -9,42 +9,36 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 
 public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder>{
-    private ArrayList mDataSet;
+    private ArrayList<Rate> mDataSet;
     private Context mContext;
+    private final RateClickListener listener;
 
-    public RatesAdapter(Context context, ArrayList<Rate> DataSet){
-        mDataSet = DataSet;
+    public RatesAdapter(Context context, RateClickListener listener){
+        mDataSet = new ArrayList<>();
         mContext = context;
+        this.listener = listener;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView mTextView;
-        public LinearLayout mLinearLayout;
-        public ViewHolder(View v){
-            super(v);
-            mTextView = (TextView) v.findViewById(R.id.tv);
-            mLinearLayout = (LinearLayout) v.findViewById(R.id.ll);
-        }
+    public void updateData(ArrayList<Rate> rates){
+        this.mDataSet = rates;
+        notifyDataSetChanged();
     }
 
     @Override
     public RatesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        // Create a new View
-        View v = LayoutInflater.from(mContext).inflate(R.layout.custom_view,parent,false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        //creates new view
+        View v = LayoutInflater.from(mContext).inflate(R.layout.custom_view, parent, false);
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        holder.mTextView.setText((Integer) mDataSet.get(position));
+        holder.mTextView.setText(mDataSet.get(position).getSymbol());
     }
 
     @Override
@@ -52,6 +46,22 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder>{
         return mDataSet.size();
     }
 
+    public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
+        public TextView mTextView;
 
+        public ViewHolder(View v){
+            super(v);
+            mTextView = (TextView) v.findViewById(R.id.tv);
+            v.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            listener.onRateItemClick(mDataSet.get(getAdapterPosition()));
+        }
+    }
+
+    public interface RateClickListener{
+        void onRateItemClick(Rate rate);
+    }
 }
