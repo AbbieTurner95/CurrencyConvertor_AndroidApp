@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder>{
     private ArrayList<Rate> mDataSet;
-    private Context mContext;
+    private final Context mContext;
     private final RateClickListener listener;
 
     public RatesAdapter(Context context, RateClickListener listener){
@@ -45,10 +45,10 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         public TextView mTextView;
 
-        public ViewHolder(View v){
-            super(v);
-            mTextView = (TextView) v.findViewById(R.id.tv);
-            v.setOnClickListener(this);
+        public ViewHolder(View view){
+            super(view);
+            mTextView = view.findViewById(R.id.tv);
+            view.setOnClickListener(this);
         }
 
         @Override

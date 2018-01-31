@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-
 import java.util.ArrayList;
 
 public class SelectRatesActivity extends AppCompatActivity {
 
     private Spinner rateSpinner;
+
+    public static final String CURRENCY_EXTRA_KEY = "currencyToConvertExtraKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +57,21 @@ public class SelectRatesActivity extends AppCompatActivity {
         rateSpinner = findViewById(R.id.rates_spinner);
         SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.rates_text,list);
         rateSpinner.setAdapter(adapter);
+        rateSpinner.setSelection(rateSpinner.getSelectedItemPosition(), false);
 
         rateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String currencyToConvert = rateSpinner.getSelectedItem().toString(); //get selected item from drop down
+                String currencyToConvert = ((SpinnerData)parentView.getItemAtPosition(position)).getText(); //get selected item from drop down
 
                 Intent intent = new Intent(SelectRatesActivity.this, MainActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, currencyToConvert);
+                intent.putExtra(CURRENCY_EXTRA_KEY, currencyToConvert);
                 startActivity(intent);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
+
             }
 
         });
