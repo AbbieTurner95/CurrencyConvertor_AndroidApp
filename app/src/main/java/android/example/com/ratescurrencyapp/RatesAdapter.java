@@ -1,9 +1,5 @@
 package android.example.com.ratescurrencyapp;
 
-/**
- * Created by Abbie on 24/01/2018.
- */
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
