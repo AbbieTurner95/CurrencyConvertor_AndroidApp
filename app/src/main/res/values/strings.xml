@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RatesCurrencyApp</string>
-    <string name="select_rates_title">Please Select Currency To Convert...</string>
+    <string name="select_rates_title">Please Select Currency To Convert</string>
 
     <string-array name="CurrencyRates">
         <item>USD</item>

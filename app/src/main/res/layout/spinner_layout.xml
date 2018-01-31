@@ -3,19 +3,20 @@
 <!-- Single List Item Design -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center">
 
     <TextView
-        android:background="@android:color/white"
+        android:gravity="center"
         android:id="@+id/rates_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="5sp"
         android:paddingBottom="10sp"
         android:paddingTop="10sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp">
+        android:textSize="18sp"
+        android:paddingStart="5sp"
+        android:paddingEnd="5sp">
     </TextView>
 
 </RelativeLayout>

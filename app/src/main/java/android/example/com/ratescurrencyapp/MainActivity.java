@@ -1,6 +1,7 @@
 package android.example.com.ratescurrencyapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.example.com.ratescurrencyapp.RatesAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +30,13 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
     private static final String TAG = MainActivity.class.getSimpleName();
     RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
+
     private RatesAdapter mAdapter;
+    private Currency currency;
+
+    Intent intent = getIntent();
+    private String RATE_SELECT = intent.getExtras().toString();
+    private String JSON_URL = "https://api.fixer.io/latest?base=" + RATE_SELECT; //base = selected rate
 
 
     @Override
@@ -37,9 +44,8 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
+        mRelativeLayout = findViewById(R.id.rl);
+        mRecyclerView = findViewById(R.id.recycler_view);
 
         // Define a layout for RecyclerView
         mRecyclerView.setHasFixedSize(true);
@@ -51,6 +57,46 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
         // Set the adapter for RecyclerView
         mRecyclerView.setAdapter(mAdapter);
+
+        loadCurrencyRates();
+    }
+
+    public void loadCurrencyRates(){
+
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject currency_obj = new JSONObject(response);
+                            currency = new Currency(currency_obj.getString("base"), currency_obj.getString("date"));
+
+                            JSONObject ratesJSON = currency_obj.getJSONObject("rates");
+                            Iterator<String> keys = ratesJSON.keys();
+                            while (keys.hasNext()){
+                                String key = keys.next();
+                                Rate rate = new Rate(key, ratesJSON.getDouble(key));
+                                currency.addRate(rate);
+                            }
+
+                            ArrayList<Rate> rates = currency.getRates();
+                            mAdapter.updateData(rates);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
 
