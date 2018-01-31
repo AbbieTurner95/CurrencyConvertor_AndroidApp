@@ -1,9 +1,5 @@
 package android.example.com.ratescurrencyapp;
 
-/**
- * Created by Abbie on 19/01/2018.
- */
-
 public class Rate {
     private String symbol;
     private double rate;

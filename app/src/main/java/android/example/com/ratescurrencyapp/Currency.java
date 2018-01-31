@@ -2,11 +2,6 @@ package android.example.com.ratescurrencyapp;
 
 import java.util.ArrayList;
 
-
-/**
- * Created by Abbie on 19/01/2018.
- */
-
 public class Currency {
     private String base;
     private String date;
