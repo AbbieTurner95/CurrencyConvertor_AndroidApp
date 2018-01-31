@@ -1,7 +1,5 @@
 package android.example.com.ratescurrencyapp;
 
-
-
 public class SpinnerData {
     String rates_text;
     Integer flag_images;
