@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -58,10 +60,17 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
     public void loadCurrencyRates(String JSON_URL){
 
+        //making the progressbar visible
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+
+
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        progressBar.setVisibility(View.INVISIBLE);
 
                         try {
                             JSONObject currency_obj = new JSONObject(response);

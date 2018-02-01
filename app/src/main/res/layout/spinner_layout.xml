@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10sp"
         android:paddingTop="10sp"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:paddingStart="5sp"
         android:paddingEnd="5sp">
     </TextView>
