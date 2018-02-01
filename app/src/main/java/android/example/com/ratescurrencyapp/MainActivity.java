@@ -107,5 +107,9 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
     @Override
     public void onRateItemClick(Rate rate){
         Log.d(TAG, "onRateItemClick: " + rate.toString());
+        Intent intent = new Intent(this, ConversionActivity.class);
+      //  intent.putExtra(TAG, parcelable);
+        startActivity(intent);
+
     }
 }
