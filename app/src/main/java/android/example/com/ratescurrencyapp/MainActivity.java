@@ -27,6 +27,7 @@ import java.util.Iterator;
 public class MainActivity extends AppCompatActivity implements RatesAdapter.RateClickListener{
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String RATE_KEY = "RateOfCurrencyToConvertWith";
 
     private RatesAdapter mAdapter;
     private Currency currency;
@@ -106,8 +107,6 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
     @Override
     public void onRateItemClick(Rate rate){
-        String RATE_KEY = "RateOfCurrencyToConvertWith";
-
         Log.d(TAG, "onRateItemClick: " + rate.toString());
         Intent intent = new Intent(this, ConversionActivity.class);
         intent.putExtra(RATE_KEY, rate);
