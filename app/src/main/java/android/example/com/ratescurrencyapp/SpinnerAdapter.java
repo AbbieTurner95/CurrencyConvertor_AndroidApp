@@ -32,7 +32,11 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerData> {
         View itemView = inflater.inflate(groupid,parent,false);
 
         ImageView imageView = itemView.findViewById(R.id.imageView);
-        imageView.setImageResource(list.get(position).getImageId());
+        Integer imageId = list.get(position).getImageId();
+
+        if (imageId != null) {
+            imageView.setImageResource(imageId);
+        }
 
         TextView textView = itemView.findViewById(R.id.rates_text);
         textView.setText(list.get(position).getText());

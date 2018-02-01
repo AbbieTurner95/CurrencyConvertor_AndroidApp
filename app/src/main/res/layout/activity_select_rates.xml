@@ -1,45 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/moneybackground"
     android:gravity="center"
-    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context="android.example.com.ratescurrencyapp.SelectRatesActivity">
 
-    <FrameLayout
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/moneybackground" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
         android:background="@drawable/black_box"
-        android:padding="16dp">
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="18dp"
+        android:padding="18dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="@string/select_rates_title"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="@string/select_rates_title"
-                android:textColor="@android:color/white" />
-
-            <Spinner
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:id="@+id/rates_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="18dp"
-                android:background="@android:color/white"
-                />
-
-        </LinearLayout>
-    </FrameLayout>
-</LinearLayout>
+        <Spinner
+            android:id="@+id/rates_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="18dp"
+            android:background="@android:color/white"
+            android:gravity="center" />
+    </LinearLayout>
+</FrameLayout>

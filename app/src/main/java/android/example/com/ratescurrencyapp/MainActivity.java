@@ -106,9 +106,11 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
     @Override
     public void onRateItemClick(Rate rate){
+        String RATE_KEY = "RateOfCurrencyToConvertWith";
+
         Log.d(TAG, "onRateItemClick: " + rate.toString());
         Intent intent = new Intent(this, ConversionActivity.class);
-      //  intent.putExtra(TAG, parcelable);
+        intent.putExtra(RATE_KEY, rate);
         startActivity(intent);
 
     }

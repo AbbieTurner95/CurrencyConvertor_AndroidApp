@@ -21,6 +21,7 @@ public class SelectRatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_rates);
 
         ArrayList<SpinnerData> list = new ArrayList<>(); //populate spinner with currency rates and flags
+        list.add(new SpinnerData("Please select a currency to convert", null));
         list.add(new SpinnerData("USD",R.drawable.us));
         list.add(new SpinnerData("GBP",R.drawable.gb));
         list.add(new SpinnerData("AUD",R.drawable.au));
@@ -64,6 +65,10 @@ public class SelectRatesActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String currencyToConvert = ((SpinnerData)parentView.getItemAtPosition(position)).getText(); //get selected item from drop down
 
+              if(position == 0){
+                  return;
+              }
+
                 Intent intent = new Intent(SelectRatesActivity.this, MainActivity.class);
                 intent.putExtra(CURRENCY_EXTRA_KEY, currencyToConvert);
                 startActivity(intent);
@@ -71,7 +76,6 @@ public class SelectRatesActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-
             }
 
         });
