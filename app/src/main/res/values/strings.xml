@@ -1,7 +1,14 @@
 <resources>
+
+    //choose first rate activity
     <string name="app_name">RatesCurrencyApp</string>
     <string name="select_rates_title">Please Select Currency To Convert</string>
     <string name="flag_content_descrip">The flags corresponding with the currency</string>
+
+    //choose second rate activity
+    <string name="title_second_page">Please select a currency to convert your chosen rate with.</string>
+
+    //convert final activity
 
 
 </resources>

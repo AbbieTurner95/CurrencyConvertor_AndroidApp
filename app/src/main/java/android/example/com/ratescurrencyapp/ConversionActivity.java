@@ -12,7 +12,6 @@ public class ConversionActivity extends AppCompatActivity {
 
     EditText input_amount;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +28,7 @@ public class ConversionActivity extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 input_amount.getText().toString();
-
-
 
             }
         });
