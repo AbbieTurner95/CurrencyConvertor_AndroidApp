@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".MainActivity"
-    android:background="@drawable/cardviewmoney">
+    android:background="@color/colorAccent">
 
     <TextView
         android:textColor="@android:color/white"
