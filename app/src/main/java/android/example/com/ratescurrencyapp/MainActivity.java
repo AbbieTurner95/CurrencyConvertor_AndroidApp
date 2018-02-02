@@ -27,10 +27,12 @@ import java.util.Iterator;
 public class MainActivity extends AppCompatActivity implements RatesAdapter.RateClickListener{
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String RATE_KEY = "RateOfCurrencyToConvertWith";
+    public static final String CURRENCY_KEY = "RateOfCurrencyToConvert";
+    public static final String RATE_KEY = "RateOfCurrencyToConvertWith";
 
     private RatesAdapter mAdapter;
     private Currency currency;
+    private String selectedRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
         String selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
         String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate; //base = selected rate
+        selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
 
         RelativeLayout amRelativeLayout = findViewById(R.id.rl);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         Log.d(TAG, "onRateItemClick: " + rate.toString());
         Intent intent = new Intent(this, ConversionActivity.class);
         intent.putExtra(RATE_KEY, rate);
+        intent.putExtra(CURRENCY_KEY, selectedRate);
         startActivity(intent);
 
     }

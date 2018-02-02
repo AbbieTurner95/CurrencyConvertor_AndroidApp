@@ -4,46 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="android.example.com.ratescurrencyapp.ConversionActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UNITED STATE DOLLARS"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="16dp" />
+
 
     <EditText
         android:id="@+id/rate_input"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:text="$ 200"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="82dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_conversion_tv" />
+        android:text="USD"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+
+    <View
+        android:layout_width="147dp"
+        android:layout_height="134dp"
+        android:background="@drawable/circle_shape"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="216dp" />
+
 
     <Button
         android:id="@+id/convert_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="Convert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rate_input"
-        app:layout_constraintVertical_bias="0.131" />
+        android:layout_width="127dp"
+        android:layout_height="110dp"
+        android:background="@drawable/white_circle_shape"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="229dp" />
+
 
     <TextView
-        android:id="@+id/show_conversion_tv"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:text="GBP"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="275"
+        android:textSize="50sp"
+        android:textColor="@android:color/black"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:text="£"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GREAT BRITISH POUNDS"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="510dp" />
+
 
 </android.support.constraint.ConstraintLayout>
