@@ -8,154 +8,163 @@
     tools:context="android.example.com.ratescurrencyapp.ConversionActivity">
 
     <View
+        android:id="@+id/topView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@color/colorAccent" />
-
-    <TextView
-        android:id="@+id/fullname_rate1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="UNITED STATE DOLLARS"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:layout_height="0dp"
+        android:background="@color/deepRed"
+        app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/symbol_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="$"
-        android:textColor="@android:color/white"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/rate_1"
+    <View
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullname_rate1" />
+        app:layout_constraintTop_toBottomOf="@+id/topView" />
 
+    <TextView
+        android:id="@+id/tvCurrencyTitleTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans"
+        android:gravity="center"
+        android:text="US Dollar"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/rate_input"
-        android:layout_width="286dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
+        android:id="@+id/etBaseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:inputType="numberDecimal"
-        android:text="200"
-        android:textColor="@android:color/white"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/rate_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/symbol_1"
-        app:layout_constraintTop_toBottomOf="@+id/fullname_rate1" />
-
-    <TextView
-        android:id="@+id/rate_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="USD"
-        android:textColor="@android:color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/convert_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="147dp"
-        android:layout_height="134dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/circle_shape"
-        app:layout_constraintBottom_toTopOf="@+id/rate_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/convert_button"
-        android:layout_width="127dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/white_circle_shape"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view" />
-
-
-    <TextView
-        android:id="@+id/rate_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="GBP"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/converted_amount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <TextView
-        android:id="@+id/converted_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="275"
-        android:textColor="@android:color/black"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/fullname_rate2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/symbol_2" />
-
-    <TextView
-        android:id="@+id/symbol_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="£"
-        android:textColor="@android:color/black"
-        android:textSize="50sp"
+        android:text="1.0"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="@+id/topView"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rate_2" />
+        app:layout_constraintTop_toBottomOf="@id/tvCurrencyTitleTop" />
 
     <TextView
-        android:id="@+id/fullname_rate2"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvBaseCurrencySymbol"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:text="$"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/etBaseAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/etBaseAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etBaseAmount" />
+
+    <TextView
+        android:id="@+id/baseCurrencyShort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="GREAT BRITISH POUNDS"
-        android:textColor="@color/colorAccent"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:text="USD"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/white"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBaseAmount" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:text="GBP"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/deepRed"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fab"
+        app:layout_constraintBottom_toTopOf="@id/etToAmount" />
+
+    <EditText
+        android:id="@+id/etToAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:text="1.0"
+        android:textColor="@color/deepRed"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@id/tvCurrencyTitleBottom"
+        app:layout_constraintEnd_toEndOf="@+id/topView"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvToCurrencySymbol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:text="£"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/deepRed"
+        android:textSize="35sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/etToAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/etToAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etToAmount" />
+
+    <TextView
+        android:id="@+id/tvCurrencyTitleBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Great British Pound"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/deepRed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:rotation="270"
+        app:backgroundTint="@color/white"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toTopOf="@+id/bottomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomView"
+        app:srcCompat="@drawable/ic_compare_arrows_black_24dp" />
 
 </android.support.constraint.ConstraintLayout>
