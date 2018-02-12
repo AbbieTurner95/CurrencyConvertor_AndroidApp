@@ -46,19 +46,13 @@ public class ConversionActivity extends AppCompatActivity {
         String titleBottom = rate.getSymbol();
         currencyTitleBottom.setText(titleBottom);
         final double secondRateChosen = rate.getRate();
-        bottomCurrencyShort.setText(String.format("Current Live Rate : %s", secondRateChosen));
+        bottomCurrencyShort.setText(String.format("Current Live " + titleBottom + " Rate : %s", secondRateChosen));
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //if top edittext not null then do frombase
-                // if bottom edittext not null then do to base
-                //if both null do nothing
-                //if both text then do from base
-
                 double amount = Double.parseDouble(topBaseAmount.getText().toString());
-                double convertedAmount = convertFromBase(amount,rate);
+                double convertedAmount = convertFromBase(amount, rate);
                 baseAmount.setText(String.valueOf(convertedAmount));
             }
         });
