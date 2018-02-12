@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class SelectRatesActivity extends AppCompatActivity {
 
-    private Spinner rateSpinner;
-
     public static final String CURRENCY_EXTRA_KEY = "currencyToConvertExtraKey";
 
     @Override
@@ -55,7 +53,7 @@ public class SelectRatesActivity extends AppCompatActivity {
         list.add(new SpinnerData("TRY",R.drawable.tr));
         list.add(new SpinnerData("ZAR",R.drawable.za));
 
-        rateSpinner = findViewById(R.id.rates_spinner);
+        Spinner rateSpinner = findViewById(R.id.rates_spinner);
         SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.rates_text,list);
         rateSpinner.setAdapter(adapter);
         rateSpinner.setSelection(rateSpinner.getSelectedItemPosition(), false);

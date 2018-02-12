@@ -43,6 +43,7 @@ public class ConversionActivity extends AppCompatActivity {
         dateInformation.setText(getString(R.string.updateInfoText));
 
         /*  SECOND RATE SELECTED SETTINGS  */
+        assert rate != null;
         String titleBottom = rate.getSymbol();
         currencyTitleBottom.setText(titleBottom);
         final double secondRateChosen = rate.getRate();
