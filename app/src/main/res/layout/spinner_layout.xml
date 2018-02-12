@@ -15,6 +15,7 @@
     <TextView
         android:gravity="center"
         android:id="@+id/rates_text"
+        android:fontFamily="@font/small_type_writing_medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10sp"

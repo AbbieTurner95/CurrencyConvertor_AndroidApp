@@ -14,8 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title2"
+        android:fontFamily="@font/small_type_writing_medium"
         android:text="@string/title_second_page"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:gravity="center"
         android:paddingBottom="20dp"/>
 
