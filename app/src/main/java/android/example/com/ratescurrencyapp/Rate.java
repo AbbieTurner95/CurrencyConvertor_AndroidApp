@@ -13,6 +13,7 @@ public class Rate implements Parcelable {
     public Rate(String symbol, double rate){
         this.symbol = symbol;
         this.rate = rate;
+
     }
 
     protected Rate(Parcel in) {

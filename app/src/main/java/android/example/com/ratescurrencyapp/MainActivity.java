@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
     private RatesAdapter mAdapter;
     private Currency currency;
     private String selectedRate;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +42,19 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         Intent intent = getIntent();
 
         selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
-        String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate; //base = selected rate
+        String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate;
 
-        RelativeLayout amRelativeLayout = findViewById(R.id.rl);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
-        // Define a layout for RecyclerView
+        // Define layout for RecyclerView
         mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this,3);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // Initialize a new instance of RecyclerView Adapter instance
+        //Initialize new instance of RecyclerView Adapter instance
         mAdapter = new RatesAdapter(this, this);
 
-        // Set the adapter for RecyclerView
+        //Set adapter for RecyclerView
         mRecyclerView.setAdapter(mAdapter);
 
         loadCurrencyRates(JSON_URL);
@@ -63,16 +62,15 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
     public void loadCurrencyRates(String JSON_URL){
 
-        //making the progressbar visible
-        final ProgressBar progressBar = findViewById(R.id.progressBar);
+        //make progressbar visible
+        progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
-
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        progressBar.setVisibility(View.INVISIBLE);
+                        progressBar.setVisibility(View.INVISIBLE); //when loaded progessBar invisible
 
                         try {
                             JSONObject currency_obj = new JSONObject(response);

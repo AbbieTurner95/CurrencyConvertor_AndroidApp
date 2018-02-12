@@ -7,6 +7,7 @@
 
     //choose second rate activity
     <string name="title_second_page">Please select a currency to convert your chosen rate with.</string>
+    <string name="updateInfoText">Rates update daily around 4PM CET every working day.</string>
 
     //convert final activity
 

@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="sans"
+        android:fontFamily="sans-serif"
         android:gravity="center"
         android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
@@ -85,7 +85,7 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/fab"
+        app:layout_constraintBottom_toTopOf="@id/fab1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etBaseAmount" />
@@ -104,7 +104,7 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fab"
+        app:layout_constraintTop_toBottomOf="@id/fab1"
         app:layout_constraintBottom_toTopOf="@id/etToAmount" />
 
     <EditText
@@ -154,18 +154,35 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:rotation="270"
         app:backgroundTint="@color/white"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottomView"
-        app:srcCompat="@drawable/ic_compare_arrows_black_24dp" />
+        app:layout_constraintVertical_bias="0.517"
+        app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/white"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toTopOf="@+id/bottomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomView"
+        app:layout_constraintVertical_bias="0.517"
+        app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
 
 </android.support.constraint.ConstraintLayout>

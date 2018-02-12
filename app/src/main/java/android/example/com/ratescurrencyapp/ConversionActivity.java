@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ConversionActivity extends AppCompatActivity {
 
-    EditText topBaseAmount;
-    TextView baseCurrencySymbols;
-    EditText baseAmount;
-    TextView toCurrencySymbol;
+    private EditText topBaseAmount;
+    private EditText baseAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +21,20 @@ public class ConversionActivity extends AppCompatActivity {
 
         TextView currencyTitleTop = findViewById(R.id.tvCurrencyTitleTop);
         topBaseAmount = findViewById(R.id.etBaseAmount);
-        baseCurrencySymbols = findViewById(R.id.tvBaseCurrencySymbol);
+        //TextView baseCurrencySymbols = findViewById(R.id.tvBaseCurrencySymbol); "£"
         TextView baseCurrencyShort = findViewById(R.id.baseCurrencyShort);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
 
         TextView currencyTitleBottom = findViewById(R.id.tvCurrencyTitleBottom);
         baseAmount = findViewById(R.id.etToAmount);
-        toCurrencySymbol = findViewById(R.id.tvToCurrencySymbol);
+        //TextView toCurrencySymbol = findViewById(R.id.tvToCurrencySymbol);    "$"
         TextView bottomCurrencyShort = findViewById(R.id.bottomCurrencyShort);
 
-
         Intent intent = getIntent();
-        final Rate rate = intent.getExtras().getParcelable(MainActivity.RATE_KEY);      //rate to convert with        //second chosen
-        final String baseCurrency = intent.getStringExtra(MainActivity.CURRENCY_KEY);   //base currency first selected
+        final Rate rate = intent.getExtras().getParcelable(MainActivity.RATE_KEY);      //rate to convert with - second selected
+        final String baseCurrency = intent.getStringExtra(MainActivity.CURRENCY_KEY);   //base currency - first selected
 
 
         /* FIRST RATE SELECTED SETTINGS */
@@ -48,12 +47,29 @@ public class ConversionActivity extends AppCompatActivity {
         final double secondRateChosen = rate.getRate();
         bottomCurrencyShort.setText(String.format("Current Live " + titleBottom + " Rate : %s", secondRateChosen));
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double amount = Double.parseDouble(topBaseAmount.getText().toString());
-                double convertedAmount = convertFromBase(amount, rate);
-                baseAmount.setText(String.valueOf(convertedAmount));
+                if (topBaseAmount.getText().toString().trim().length() <= 0) {
+                    Toast.makeText(getApplicationContext(), "Please enter a amount to convert.", Toast.LENGTH_SHORT).show();
+                } else {
+                    double amount = Double.parseDouble(topBaseAmount.getText().toString());
+                    double convertedAmount = convertFromBase(amount, rate);
+                    baseAmount.setText(String.format("%.2f", convertedAmount));
+                }
+            }
+        });
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               if (baseAmount.getText().toString().trim().length() <= 0) {
+                   Toast.makeText(getApplicationContext(), "Please enter a amount to convert.", Toast.LENGTH_SHORT).show();
+               } else {
+                    double amount = Double.parseDouble(baseAmount.getText().toString());
+                    double convertedAmount = convertToBase(amount, rate);
+                    topBaseAmount.setText(String.format("%.2f", convertedAmount));
+                }
             }
         });
     }
@@ -65,6 +81,4 @@ public class ConversionActivity extends AppCompatActivity {
     private double convertToBase(double amount, Rate rate) {
         return amount * 1 / rate.getRate();
     }
-
-
 }

@@ -31,5 +31,16 @@
             android:layout_margin="18dp"
             android:background="@android:color/white"
             android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="@string/updateInfoText"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:layout_margin="12dp"/>
+
     </LinearLayout>
 </FrameLayout>
