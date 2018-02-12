@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
 
         Intent intent = getIntent();
 
-        String selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
-        String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate; //base = selected rate
         selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
+        String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate; //base = selected rate
 
         RelativeLayout amRelativeLayout = findViewById(R.id.rl);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
