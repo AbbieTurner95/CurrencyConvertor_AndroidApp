@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".MainActivity"
-    android:background="@color/colorAccent">
+    android:background="@color/greyBlue">
 
     <TextView
-        android:textColor="@android:color/white"
+        android:textColor="@color/maxYellow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title2"

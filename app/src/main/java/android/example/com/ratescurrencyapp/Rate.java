@@ -7,9 +7,6 @@ public class Rate implements Parcelable {
     private String symbol;
     private double rate;
 
-    public Rate(){
-    }
-
     public Rate(String symbol, double rate){
         this.symbol = symbol;
         this.rate = rate;

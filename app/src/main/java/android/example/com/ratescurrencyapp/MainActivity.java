@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
     private static final String TAG = MainActivity.class.getSimpleName();
     public static final String CURRENCY_KEY = "RateOfCurrencyToConvert";
     public static final String RATE_KEY = "RateOfCurrencyToConvertWith";
+    public static final String DATE_KEY = "DateCurrencyWasUpdated";
 
     private RatesAdapter mAdapter;
     private Currency currency;
     private String selectedRate;
+    private String dateUpdated;
     private ProgressBar progressBar;
 
     @Override
@@ -70,12 +72,13 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        progressBar.setVisibility(View.INVISIBLE); //when loaded progessBar invisible
+                        progressBar.setVisibility(View.INVISIBLE);
 
                         try {
                             JSONObject currency_obj = new JSONObject(response);
                             currency = new Currency(currency_obj.getString("base"), currency_obj.getString("date"));
 
+                            dateUpdated = currency_obj.getString("date");
                             JSONObject ratesJSON = currency_obj.getJSONObject("rates");
                             Iterator<String> keys = ratesJSON.keys();
                             while (keys.hasNext()){
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         Intent intent = new Intent(this, ConversionActivity.class);
         intent.putExtra(RATE_KEY, rate);
         intent.putExtra(CURRENCY_KEY, selectedRate);
+        intent.putExtra(DATE_KEY, dateUpdated);
         startActivity(intent);
 
     }

@@ -11,9 +11,10 @@
         android:id="@+id/topView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/deepRed"
+        android:background="@color/gunMetal"
         app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,15 +44,15 @@
 
     <EditText
         android:id="@+id/etBaseAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:inputType="numberDecimal"
         android:text=""
-        android:textColor="@color/white"
+        android:textColor="@color/greyBlue"
         android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -59,36 +60,39 @@
         app:layout_constraintTop_toBottomOf="@id/tvCurrencyTitleTop" />
 
     <TextView
-        android:id="@+id/tvBaseCurrencySymbol"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:text=""
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/etBaseAmount"
-        app:layout_constraintBottom_toBottomOf="@+id/etBaseAmount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etBaseAmount" />
-
-    <TextView
-        android:id="@+id/baseCurrencyShort"
+        android:id="@+id/baseDateUpdated"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:alpha="0.7"
         android:gravity="center"
-        android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-        android:textColor="@color/white"
+        android:textColor="@color/maxYellow"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/fab1"
+        app:layout_constraintBottom_toBottomOf="@+id/topView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBaseAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/etBaseAmount" />
+
+    <TextView
+        android:id="@+id/tvDateInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/bottomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baseDateUpdated" />
 
     <TextView
         android:id="@+id/bottomCurrencyShort"
@@ -96,48 +100,34 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:alpha="0.7"
         android:gravity="center"
         android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-        android:textColor="@color/deepRed"
+        android:textColor="@color/greyBlue"
         android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/etToAmount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fab1"
-        app:layout_constraintBottom_toTopOf="@id/etToAmount" />
+        app:layout_constraintTop_toBottomOf="@id/fab1" />
 
     <EditText
         android:id="@+id/etToAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:gravity="center"
         android:inputType="numberDecimal"
         android:text=""
-        android:textColor="@color/deepRed"
+        android:textColor="@color/greyBlue"
         android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@id/tvCurrencyTitleBottom"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvToCurrencySymbol"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:text=""
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
-        android:textColor="@color/deepRed"
-        android:textSize="35sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/etToAmount"
-        app:layout_constraintBottom_toBottomOf="@+id/etToAmount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etToAmount" />
 
     <TextView
         android:id="@+id/tvCurrencyTitleBottom"
@@ -148,7 +138,7 @@
         android:gravity="center"
         android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
-        android:textColor="@color/deepRed"
+        android:textColor="@color/greyBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -159,7 +149,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="@color/maxYellow"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,7 +165,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="@color/maxYellow"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"

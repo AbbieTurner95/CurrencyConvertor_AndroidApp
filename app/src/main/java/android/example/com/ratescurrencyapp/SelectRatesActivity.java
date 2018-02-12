@@ -21,7 +21,7 @@ public class SelectRatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_rates);
 
         ArrayList<SpinnerData> list = new ArrayList<>(); //populate spinner with currency rates and flags
-        list.add(new SpinnerData("Please select a currency to convert", null)); //hint
+        list.add(new SpinnerData(getString(R.string.select_string), null)); //hint
         list.add(new SpinnerData("USD",R.drawable.us));
         list.add(new SpinnerData("GBP",R.drawable.gb));
         list.add(new SpinnerData("AUD",R.drawable.au));

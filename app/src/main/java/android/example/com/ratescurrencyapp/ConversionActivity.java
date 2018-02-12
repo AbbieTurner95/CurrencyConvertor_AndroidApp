@@ -21,37 +21,38 @@ public class ConversionActivity extends AppCompatActivity {
 
         TextView currencyTitleTop = findViewById(R.id.tvCurrencyTitleTop);
         topBaseAmount = findViewById(R.id.etBaseAmount);
-        //TextView baseCurrencySymbols = findViewById(R.id.tvBaseCurrencySymbol); "£"
-        TextView baseCurrencyShort = findViewById(R.id.baseCurrencyShort);
+        TextView dateInformation = findViewById(R.id.tvDateInformation);
+        TextView baseDateUpdated = findViewById(R.id.baseDateUpdated);
 
         FloatingActionButton fab1 = findViewById(R.id.fab1);
         FloatingActionButton fab2 = findViewById(R.id.fab2);
 
         TextView currencyTitleBottom = findViewById(R.id.tvCurrencyTitleBottom);
         baseAmount = findViewById(R.id.etToAmount);
-        //TextView toCurrencySymbol = findViewById(R.id.tvToCurrencySymbol);    "$"
         TextView bottomCurrencyShort = findViewById(R.id.bottomCurrencyShort);
 
         Intent intent = getIntent();
+        final String dateUpdated = intent.getStringExtra(MainActivity.DATE_KEY);
         final Rate rate = intent.getExtras().getParcelable(MainActivity.RATE_KEY);      //rate to convert with - second selected
         final String baseCurrency = intent.getStringExtra(MainActivity.CURRENCY_KEY);   //base currency - first selected
 
 
         /* FIRST RATE SELECTED SETTINGS */
         currencyTitleTop.setText(baseCurrency);
-        baseCurrencyShort.setText(baseCurrency);
+        baseDateUpdated.setText(String.format(getString(R.string.updated_rates_string) + " : %s", dateUpdated));
+        dateInformation.setText(getString(R.string.updateInfoText));
 
         /*  SECOND RATE SELECTED SETTINGS  */
         String titleBottom = rate.getSymbol();
         currencyTitleBottom.setText(titleBottom);
         final double secondRateChosen = rate.getRate();
-        bottomCurrencyShort.setText(String.format("Current Live " + titleBottom + " Rate : %s", secondRateChosen));
+        bottomCurrencyShort.setText(String.format(getString(R.string.live_string) + " " + titleBottom + " " + getString(R.string.rates_string) +" : %s", secondRateChosen));
 
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (topBaseAmount.getText().toString().trim().length() <= 0) {
-                    Toast.makeText(getApplicationContext(), "Please enter a amount to convert.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.emptyString_toastMessage), Toast.LENGTH_SHORT).show();
                 } else {
                     double amount = Double.parseDouble(topBaseAmount.getText().toString());
                     double convertedAmount = convertFromBase(amount, rate);
@@ -64,7 +65,7 @@ public class ConversionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                if (baseAmount.getText().toString().trim().length() <= 0) {
-                   Toast.makeText(getApplicationContext(), "Please enter a amount to convert.", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), getString(R.string.emptyString_toastMessage), Toast.LENGTH_SHORT).show();
                } else {
                     double amount = Double.parseDouble(baseAmount.getText().toString());
                     double convertedAmount = convertToBase(amount, rate);
