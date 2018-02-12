@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         progressBar.setVisibility(View.INVISIBLE);
 
                         try {
