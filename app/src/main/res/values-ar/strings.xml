@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">  يرجى تحديد عملة لتحويلها</string>
+    <string name="app_name">  تحويل العملات الحية</string>
+    <string name="flag_content_descrip">   الأعلام المقابلة مع العملة</string>
+    <string name="updateInfoText"> تحديث الأسعار يوميا حوالي 4:00 بتوقيت وسط أوروبا كل يوم عمل.</string>
+    <string name="title_second_page"> يرجى تحديد عملة لتحويل المعدل الذي اخترته.</string>
+    <string name="emptyString_toastMessage">الرجاء إدخال مبلغ للتحويل.</string>
+    <string name="live_string"> الحالي لايف</string>
+    <string name="rates_string">   معدل </string>
+    <string name="updated_rates_string">  تم تحديث آخر تحديث </string>
+    <string name="CD_background"> خلفية</string>
+</resources>
+
+
+

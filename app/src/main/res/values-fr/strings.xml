@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Convertisseur de devises en direct</string>
+    <string name="select_string">Veuillez sélectionner une devise à convertir</string>
+    <string name="flag_content_descrip">Les drapeaux correspondant à la devise</string>
+    <string name="updateInfoText">Les tarifs sont actualisés tous les jours vers 16h00 CET tous les jours ouvrables.</string>
+    <string name="title_second_page">Veuillez sélectionner une devise pour convertir votre taux choisi avec.</string>
+    <string name="emptyString_toastMessage">Sil vous plaît entrer un montant à convertir.</string>
+    <string name="live_string">En cours</string>
+    <string name="rates_string">Taux </string>
+    <string name="updated_rates_string">Tarifs mis à jour</string>
+    <string name="CD_background">Contexte</string>
+</resources>

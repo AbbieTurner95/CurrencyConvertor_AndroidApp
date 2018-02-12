@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">Выберите валюту для конвертации</string>
+    <string name="app_name">Конвертер валют</string>
+    <string name="flag_content_descrip">Флаги, соответствующие валюте</string>
+    <string name="updateInfoText">Цены обновляются ежедневно около 4 вечера по центральному стандарту каждый рабочий день.</string>
+    <string name="title_second_page">Выберите валюту для конвертации выбранной вами ставки.</string>
+    <string name="emptyString_toastMessage">Введите сумму конвертации.</string>
+    <string name="live_string">Текущий Live</string>
+    <string name="rates_string">Ставка</string>
+    <string name="updated_rates_string">Цены обновлены</string>
+    <string name="CD_background">Задний план</string>
+</resources>

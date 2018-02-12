@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">请选择要转换的货币</string>
+    <string name="app_name">实时货币转换器</string>
+    <string name="flag_content_descrip">与货币对应的标志</string>
+    <string name="updateInfoText">每个工作日下午4点左右，我们会每天更新价格。</string>
+    <string name="title_second_page">请选择一种货币来兑换您选择的汇率。</string>
+    <string name="emptyString_toastMessage">请输入转换的金额。</string>
+    <string name="live_string">现在直播</string>
+    <string name="rates_string">率</string>
+    <string name="updated_rates_string">最后更新的价格</string>
+    <string name="CD_background">背景</string>
+</resources>

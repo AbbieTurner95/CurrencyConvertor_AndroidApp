@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">Por favor seleccione una moneda para convertir</string>
+    <string name="app_name">Convertidor de divisas en vivo</string>
+    <string name="flag_content_descrip">Los indicadores correspondientes a la moneda</string>
+    <string name="updateInfoText">Las tarifas se actualizan diariamente alrededor de las 4 p.m. CET todos los días laborables.</string>
+    <string name="title_second_page">Seleccione una moneda para convertir la tasa elegida con.</string>
+    <string name="emptyString_toastMessage">Por favor ingrese un monto para convertir.</string>
+    <string name="live_string">Actual en vivo</string>
+    <string name="rates_string">Tarifa</string>
+    <string name="updated_rates_string">Tarifas actualizadas por última vez</string>
+    <string name="CD_background">Fondo</string>
+</resources>

@@ -61,7 +61,7 @@
             android:fontFamily="@font/small_type_writing"
             android:gravity="center"
             android:text="@string/updateInfoText"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:textColor="@color/maxYellow"
             android:layout_margin="12dp"/>
 

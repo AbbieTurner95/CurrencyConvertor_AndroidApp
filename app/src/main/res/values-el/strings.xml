@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">Επιλέξτε ένα νόμισμα για μετατροπή</string>
+    <string name="app_name">Live μετατροπέα νομισμάτων</string>
+    <string name="flag_content_descrip">Οι σημαίες που αντιστοιχούν στο νόμισμα</string>
+    <string name="updateInfoText"> Οι τιμές ενημερώνονται καθημερινά περίπου στις 4:00 CET κάθε εργάσιμη ημέρα.</string>
+    <string name="title_second_page">Επιλέξτε ένα νόμισμα για να μετατρέψετε την επιλεγμένη σας τιμή με.</string>
+    <string name="emptyString_toastMessage">Καταχωρίστε ένα ποσό για μετατροπή.</string>
+    <string name="live_string">Τρέχον ζωντανό</string>
+    <string name="rates_string">Τιμή </string>
+    <string name="updated_rates_string">Οι τιμές ενημερώθηκαν τελευταία</string>
+    <string name="CD_background">Ιστορικό</string>
+</resources>

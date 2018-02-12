@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">Bitte wählen Sie eine Währung aus, die Sie konvertieren möchten</string>
+    <string name="app_name">Live-Währungsrechner</string>
+    <string name="flag_content_descrip">Die Flaggen entsprechen der Währung</string>
+    <string name="updateInfoText">Die Preise werden täglich um 16:00 Uhr MEZ an jedem Arbeitstag aktualisiert.</string>
+    <string name="title_second_page">Bitte wählen Sie eine Währung aus, um den von Ihnen gewählten Tarif umzurechnen.</string>
+    <string name="emptyString_toastMessage">Bitte geben Sie einen Betrag ein, den Sie umrechnen möchten.</string>
+    <string name="live_string">Aktuell Live</string>
+    <string name="rates_string">Bewertung</string>
+    <string name="updated_rates_string">Preise zuletzt aktualisiert</string>
+    <string name="CD_background">Hintergrund</string>
+</resources>
+
+
+
+
+

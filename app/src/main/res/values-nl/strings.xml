@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_string">Selecteer een valuta om te converteren</string>
+    <string name="app_name">Live valuta-omzetter</string>
+    <string name="flag_content_descrip">De vlaggen die overeenkomen met de valuta</string>
+    <string name="updateInfoText">Tarieven worden dagelijks om 16.00 uur CET op de werkdag bijgewerkt.</string>
+    <string name="title_second_page">Selecteer een valuta om uw gekozen koers om te zetten met.</string>
+    <string name="emptyString_toastMessage">Voer een bedrag in om te converteren.</string>
+    <string name="live_string">Huidig live</string>
+    <string name="rates_string">Tarief </string>
+    <string name="updated_rates_string">Tarieven voor het laatst bijgewerkt </string>
+    <string name="CD_background">Achtergrond</string>
+</resources>
+
+
+

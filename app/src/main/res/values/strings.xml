@@ -1,19 +1,12 @@
 <resources>
-
-    //Choose first rate activity
     <string name="select_string">Please select a currency to convert</string>
     <string name="app_name">Live Currency Converter</string>
     <string name="flag_content_descrip">The flags corresponding with the currency</string>
     <string name="updateInfoText">Rates update daily around 4PM CET every working day.</string>
-
-    //choose second rate activity
     <string name="title_second_page">Please select a currency to convert your chosen rate with.</string>
-
-    //convert final activity
     <string name="emptyString_toastMessage">Please enter an amount to convert.</string>
     <string name="live_string">Current Live</string>
     <string name="rates_string">Rate </string>
     <string name="updated_rates_string">Rates last updated </string>
     <string name="CD_background">Background</string>
-
 </resources>
