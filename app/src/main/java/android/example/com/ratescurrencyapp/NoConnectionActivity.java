@@ -16,26 +16,10 @@ public class NoConnectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_no_connection);
 
+    }
 
-        /*new Handler().postDelayed(new Runnable() {
-            public void run() {
-                ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-
-                if (activeNetwork != null) {                                                    //check if connected to the internet
-                    if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-                        // connected to wifi
-                    } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                        // check if connected to mobile data
-                    }
-                } else {                                                                        //if not connected start no internet page
-                    Intent intent = new Intent(NoConnectionActivity.this, SelectRatesActivity.class);
-                    startActivity(intent);
-                }
-            }
-        }, 100);
-
-    }*/
-
+    @Override
+    public void onBackPressed() { //override back button so cant go back//
+        return;
     }
 }
