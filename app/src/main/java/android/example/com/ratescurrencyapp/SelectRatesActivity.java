@@ -68,7 +68,7 @@ public class SelectRatesActivity extends AppCompatActivity {
               }
                 Intent intent = new Intent(SelectRatesActivity.this, MainActivity.class);
                 intent.putExtra(CURRENCY_EXTRA_KEY, currencyToConvert);
-                rateSpinner.setSelection(0);
+                rateSpinner.setSelection(0); //reset spinner
                 startActivity(intent);
             }
 
