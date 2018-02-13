@@ -1,17 +1,22 @@
 package android.example.com.ratescurrencyapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class SelectRatesActivity extends AppCompatActivity {
 
     public static final String CURRENCY_EXTRA_KEY = "currencyToConvertExtraKey";
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,18 @@ public class SelectRatesActivity extends AppCompatActivity {
         rateSpinner.setAdapter(adapter);
         rateSpinner.setSelection(rateSpinner.getSelectedItemPosition(), false);
 
+        /* CHECK FOR INTERNET */
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if (activeNetwork != null) {                                                    //check if connected to the internet
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {             // connected to wifi
+            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {    // check if connected to mobile data
+            }
+        } else {                                                                        //if not connected start no internet page
+            Intent intent = new Intent(this, NoConnectionActivity.class);
+            startActivity(intent);
+        }
+
         rateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -68,14 +85,12 @@ public class SelectRatesActivity extends AppCompatActivity {
               }
                 Intent intent = new Intent(SelectRatesActivity.this, MainActivity.class);
                 intent.putExtra(CURRENCY_EXTRA_KEY, currencyToConvert);
-                rateSpinner.setSelection(0); //reset spinner
+                rateSpinner.setSelection(0); //reset spinner to default value
                 startActivity(intent);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-            }
-
+            public void onNothingSelected(AdapterView<?> parentView) {}
         });
     }
 }

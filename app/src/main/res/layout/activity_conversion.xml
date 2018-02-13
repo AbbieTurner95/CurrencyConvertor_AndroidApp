@@ -42,25 +42,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.autofit.et.lib.AutoFitEditText
         android:id="@+id/etBaseAmount"
-        android:layout_width="0dp"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:fontFamily="@font/small_type_writing_medium"
         android:gravity="center"
         android:inputType="numberDecimal"
-        android:text=""
         android:textColor="@color/greyBlue"
-        android:textSize="70sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCurrencyTitleTop" />
 
     <TextView
-        android:id="@+id/baseDateUpdated"
+        android:id="@+id/tvDateUpdated"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
@@ -96,18 +99,18 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/baseDateUpdated" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDateUpdated" />
 
     <TextView
-        android:id="@+id/bottomCurrencyShort"
+        android:id="@+id/tvCurrentLiveDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:alpha="0.7"
-        android:gravity="center"
         android:fontFamily="@font/small_type_writing_medium"
+        android:gravity="center"
         android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/greyBlue"
@@ -117,19 +120,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fab1" />
 
-    <EditText
+    <com.autofit.et.lib.AutoFitEditText
         android:id="@+id/etToAmount"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/small_type_writing_medium"
         android:gravity="center"
         android:inputType="numberDecimal"
-        android:text=""
-        android:fontFamily="@font/small_type_writing_medium"
         android:textColor="@color/greyBlue"
-        android:textSize="70sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@id/tvCurrencyTitleBottom"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_chainStyle="spread_inside"

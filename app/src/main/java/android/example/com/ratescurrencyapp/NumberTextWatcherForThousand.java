@@ -6,20 +6,17 @@ import android.widget.EditText;
 import java.util.StringTokenizer;
 
 public class NumberTextWatcherForThousand implements TextWatcher {
-
-    EditText editText;
+    private EditText editText;
 
     public NumberTextWatcherForThousand(EditText editText) {
         this.editText = editText;
     }
 
     @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-    }
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
     @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-    }
+    public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
     @Override
     public void afterTextChanged(Editable s) {
@@ -28,15 +25,13 @@ public class NumberTextWatcherForThousand implements TextWatcher {
             String value = editText.getText().toString();
 
 
-            if (value != null && !value.equals(""))
+            if (!value.equals(""))
             {
-
                 if(value.startsWith(".")){
                     editText.setText("0.");
                 }
                 if(value.startsWith("0") && !value.startsWith("0.")){
                     editText.setText("");
-
                 }
 
 
@@ -48,8 +43,7 @@ public class NumberTextWatcherForThousand implements TextWatcher {
             editText.addTextChangedListener(this);
             return;
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex) {
             ex.printStackTrace();
             editText.addTextChangedListener(this);
         }
@@ -88,7 +82,6 @@ public class NumberTextWatcherForThousand implements TextWatcher {
             str3 = str1.charAt(k) + str3;
             i++;
         }
-
     }
 
     public static String trimCommaOfString(String string) {
@@ -97,6 +90,5 @@ public class NumberTextWatcherForThousand implements TextWatcher {
         else {
             return string;
         }
-
     }
 }

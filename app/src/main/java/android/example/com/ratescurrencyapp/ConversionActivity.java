@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,20 +22,19 @@ public class ConversionActivity extends AppCompatActivity {
         TextView currencyTitleTop = findViewById(R.id.tvCurrencyTitleTop);
         topBaseAmount = findViewById(R.id.etBaseAmount);
         TextView dateInformation = findViewById(R.id.tvDateInformation);
-        TextView baseDateUpdated = findViewById(R.id.baseDateUpdated);
+        TextView baseDateUpdated = findViewById(R.id.tvDateUpdated);
 
         FloatingActionButton fab1 = findViewById(R.id.fab1);
         FloatingActionButton fab2 = findViewById(R.id.fab2);
 
         TextView currencyTitleBottom = findViewById(R.id.tvCurrencyTitleBottom);
         baseAmount = findViewById(R.id.etToAmount);
-        TextView bottomCurrencyShort = findViewById(R.id.bottomCurrencyShort);
+        TextView bottomCurrencyShort = findViewById(R.id.tvCurrentLiveDate);
 
         Intent intent = getIntent();
         final String dateUpdated = intent.getStringExtra(MainActivity.DATE_KEY);
         final Rate rate = intent.getExtras().getParcelable(MainActivity.RATE_KEY);      //rate to convert with - second selected
         final String baseCurrency = intent.getStringExtra(MainActivity.CURRENCY_KEY);   //base currency - first selected
-
 
         /* FIRST RATE SELECTED SETTINGS */
         currencyTitleTop.setText(baseCurrency);
@@ -50,6 +48,7 @@ public class ConversionActivity extends AppCompatActivity {
         final double secondRateChosen = rate.getRate();
         bottomCurrencyShort.setText(String.format(getString(R.string.live_string) + " " + titleBottom + " " + getString(R.string.rates_string) +" : %s", secondRateChosen));
 
+        /* Watch EditText input add ',' every thousand */
         baseAmount.addTextChangedListener(new NumberTextWatcherForThousand(baseAmount));
         topBaseAmount.addTextChangedListener(new NumberTextWatcherForThousand(topBaseAmount));
 
@@ -80,6 +79,8 @@ public class ConversionActivity extends AppCompatActivity {
         });
     }
 
+
+    /* Maths conversion to work out conversion of chosen rates */
     private double convertFromBase(double amount, Rate rate) {
         return amount * rate.getRate();
     }

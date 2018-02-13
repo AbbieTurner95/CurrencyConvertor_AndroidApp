@@ -18,7 +18,6 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerData> {
     private ArrayList<SpinnerData> list;
     private LayoutInflater inflater;
 
-
     public SpinnerAdapter(Activity context, int groupid, int id, ArrayList<SpinnerData> list){
         super(context,id,list);
         this.list = list;
@@ -27,9 +26,7 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerData> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent ){
-
         View itemView = inflater.inflate(groupid,parent,false);
-
         ImageView imageView = itemView.findViewById(R.id.imageView);
         Integer imageId = list.get(position).getImageId();
 
@@ -44,6 +41,5 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerData> {
 
     public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent){
         return getView(position,convertView,parent);
-
     }
 }

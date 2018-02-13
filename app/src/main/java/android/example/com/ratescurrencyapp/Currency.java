@@ -7,8 +7,7 @@ public class Currency {
     private String date;
     private ArrayList<Rate> rates;
 
-    public Currency(){
-    }
+    public Currency(){}
 
     public Currency(String base, String date){
         this.base = base;

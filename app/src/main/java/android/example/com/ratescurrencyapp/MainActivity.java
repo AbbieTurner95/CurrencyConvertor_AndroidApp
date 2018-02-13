@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-
         selectedRate = intent.getStringExtra(SelectRatesActivity.CURRENCY_EXTRA_KEY);
         String JSON_URL = "https://api.fixer.io/latest?base=" + selectedRate;
 
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
     }
 
     public void loadCurrencyRates(String JSON_URL){
-
         //make progressbar visible
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        progressBar.setVisibility(View.INVISIBLE);
+                        progressBar.setVisibility(View.INVISIBLE); //stop progressBar when results loaded
 
                         try {
                             JSONObject currency_obj = new JSONObject(response);
@@ -106,15 +104,12 @@ public class MainActivity extends AppCompatActivity implements RatesAdapter.Rate
         requestQueue.add(stringRequest);
     }
 
-
     @Override
     public void onRateItemClick(Rate rate){
-        Log.d(TAG, "onRateItemClick: " + rate.toString());
         Intent intent = new Intent(this, ConversionActivity.class);
         intent.putExtra(RATE_KEY, rate);
         intent.putExtra(CURRENCY_KEY, selectedRate);
         intent.putExtra(DATE_KEY, dateUpdated);
         startActivity(intent);
-
     }
 }

@@ -27,7 +27,7 @@ public class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder>{
 
     @Override
     public RatesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        //creates new view
+        //creates a new view
         View v = LayoutInflater.from(mContext).inflate(R.layout.custom_view, parent, false);
         return new ViewHolder(v);
     }
