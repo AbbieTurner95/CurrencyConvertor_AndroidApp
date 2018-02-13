@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "132619033200",
+    "firebase_url": "https://live-currency-converter.firebaseio.com",
+    "project_id": "live-currency-converter",
+    "storage_bucket": "live-currency-converter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132619033200:android:175ebddb001dc34c",
+        "android_client_info": {
+          "package_name": "android.example.com.ratescurrencyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132619033200-ub01nf3jn2ot6t4d295jl3lcivmp8c38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.example.com.ratescurrencyapp",
+            "certificate_hash": "a0142b0cbe550e4f8d453da1573b042e1389f684"
+          }
+        },
+        {
+          "client_id": "132619033200-q0o9kd7q7p1q5vsr4o8r2dnhre713fm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz4dldHtDxoGeJ8hU6L6yDhHcmzXzNN9Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132619033200-q0o9kd7q7p1q5vsr4o8r2dnhre713fm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
