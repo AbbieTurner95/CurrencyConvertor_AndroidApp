@@ -53,7 +53,7 @@ public class SelectRatesActivity extends AppCompatActivity {
         list.add(new SpinnerData("TRY",R.drawable.tr));
         list.add(new SpinnerData("ZAR",R.drawable.za));
 
-        Spinner rateSpinner = findViewById(R.id.rates_spinner);
+        final Spinner rateSpinner = findViewById(R.id.rates_spinner);
         SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.rates_text,list);
         rateSpinner.setAdapter(adapter);
         rateSpinner.setSelection(rateSpinner.getSelectedItemPosition(), false);
@@ -68,6 +68,7 @@ public class SelectRatesActivity extends AppCompatActivity {
               }
                 Intent intent = new Intent(SelectRatesActivity.this, MainActivity.class);
                 intent.putExtra(CURRENCY_EXTRA_KEY, currencyToConvert);
+                rateSpinner.setSelection(0);
                 startActivity(intent);
             }
 
