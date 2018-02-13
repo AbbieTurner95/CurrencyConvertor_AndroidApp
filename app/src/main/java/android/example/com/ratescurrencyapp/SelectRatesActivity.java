@@ -9,19 +9,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class SelectRatesActivity extends AppCompatActivity {
 
     public static final String CURRENCY_EXTRA_KEY = "currencyToConvertExtraKey";
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_rates);
+
+         /* CHECK FOR INTERNET */;
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        if (activeNetwork != null) {                                                    //check if connected to the internet
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+                // connected to wifi
+            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+                // check if connected to mobile data
+            }
+        } else {                                                                        //if not connected start no internet page
+            Intent intent = new Intent(this, NoConnectionActivity.class);
+            startActivity(intent);
+        }
+
 
         ArrayList<SpinnerData> list = new ArrayList<>(); //populate spinner with currency rates and flags
         list.add(new SpinnerData(getString(R.string.select_string), null)); //hint
@@ -62,18 +76,6 @@ public class SelectRatesActivity extends AppCompatActivity {
         SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.rates_text,list);
         rateSpinner.setAdapter(adapter);
         rateSpinner.setSelection(rateSpinner.getSelectedItemPosition(), false);
-
-        /* CHECK FOR INTERNET */
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        if (activeNetwork != null) {                                                    //check if connected to the internet
-            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {             // connected to wifi
-            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {    // check if connected to mobile data
-            }
-        } else {                                                                        //if not connected start no internet page
-            Intent intent = new Intent(this, NoConnectionActivity.class);
-            startActivity(intent);
-        }
 
         rateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
