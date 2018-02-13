@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,13 +50,16 @@ public class ConversionActivity extends AppCompatActivity {
         final double secondRateChosen = rate.getRate();
         bottomCurrencyShort.setText(String.format(getString(R.string.live_string) + " " + titleBottom + " " + getString(R.string.rates_string) +" : %s", secondRateChosen));
 
+        baseAmount.addTextChangedListener(new NumberTextWatcherForThousand(baseAmount));
+        topBaseAmount.addTextChangedListener(new NumberTextWatcherForThousand(topBaseAmount));
+
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (topBaseAmount.getText().toString().trim().length() <= 0) {
                     Toast.makeText(getApplicationContext(), getString(R.string.emptyString_toastMessage), Toast.LENGTH_SHORT).show();
                 } else {
-                    double amount = Double.parseDouble(topBaseAmount.getText().toString());
+                    double amount = Double.parseDouble(NumberTextWatcherForThousand.trimCommaOfString(topBaseAmount.getText().toString()));
                     double convertedAmount = convertFromBase(amount, rate);
                     baseAmount.setText(String.format("%.2f", convertedAmount));
                 }
@@ -68,7 +72,7 @@ public class ConversionActivity extends AppCompatActivity {
                if (baseAmount.getText().toString().trim().length() <= 0) {
                    Toast.makeText(getApplicationContext(), getString(R.string.emptyString_toastMessage), Toast.LENGTH_SHORT).show();
                } else {
-                    double amount = Double.parseDouble(baseAmount.getText().toString());
+                   double amount = Double.parseDouble(NumberTextWatcherForThousand.trimCommaOfString(baseAmount.getText().toString()));
                     double convertedAmount = convertToBase(amount, rate);
                     topBaseAmount.setText(String.format("%.2f", convertedAmount));
                 }
