@@ -9,4 +9,7 @@
     <string name="rates_string">Rate </string>
     <string name="updated_rates_string">Rates last updated </string>
     <string name="CD_background">Background</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
