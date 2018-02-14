@@ -18,7 +18,8 @@ public class NetworkState {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 
         if (activeNetwork != null && activeNetwork.isConnected()) {
-            Log.d("NetworkStatus", "getConnectivityStatus: type=" + activeNetwork.getType() + ", connected?=" + activeNetwork.isConnected());
+            Log.d("NetworkStatus", "getConnectivityStatus: type=" + activeNetwork.getType() +
+                                                            ", connected?=" + activeNetwork.isConnected());
             return TYPE_CONNECTED;
         } else {
             return TYPE_NOT_CONNECTED;

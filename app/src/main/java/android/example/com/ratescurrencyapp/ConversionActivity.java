@@ -1,10 +1,12 @@
 package android.example.com.ratescurrencyapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,12 @@ public class ConversionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion);
+
+        View focus = getCurrentFocus();
+        if (focus != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
+        }
 
         TextView currencyTitleTop = findViewById(R.id.tvCurrencyTitleTop);
         topBaseAmount = findViewById(R.id.etBaseAmount);
@@ -38,6 +46,7 @@ public class ConversionActivity extends AppCompatActivity {
 
         /* FIRST RATE SELECTED SETTINGS */
         currencyTitleTop.setText(baseCurrency);
+        topBaseAmount.setText(String.format("1"));
         baseDateUpdated.setText(String.format(getString(R.string.updated_rates_string) + " : %s", dateUpdated));
         dateInformation.setText(getString(R.string.updateInfoText));
 
@@ -45,6 +54,7 @@ public class ConversionActivity extends AppCompatActivity {
         assert rate != null;
         String titleBottom = rate.getSymbol();
         currencyTitleBottom.setText(titleBottom);
+        baseAmount.setText(String.format("%.2f", rate.getRate()));
         final double secondRateChosen = rate.getRate();
         bottomCurrencyShort.setText(String.format(getString(R.string.live_string) + " " + titleBottom + " " + getString(R.string.rates_string) +" : %s", secondRateChosen));
 
@@ -88,4 +98,6 @@ public class ConversionActivity extends AppCompatActivity {
     private double convertToBase(double amount, Rate rate) {
         return amount * 1 / rate.getRate();
     }
+
+
 }

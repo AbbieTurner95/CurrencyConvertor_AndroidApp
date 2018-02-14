@@ -23,8 +23,8 @@ public class SelectRatesActivity extends AppCompatActivity implements SelectRate
                 .replace(R.id.selectBaseActivity, SelectRatesFragment.newInstance())
                 .commit();
 
+        receiver = new NetworkStateReceiver();
     }
-
 
 
     @Override
