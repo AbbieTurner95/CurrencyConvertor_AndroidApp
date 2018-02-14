@@ -27,7 +27,13 @@
         <activity
             android:name=".ConversionActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".NoConnectionActivity"></activity>
-    </application>
 
+
+    <receiver android:name=".NetworkStateReceiver">
+        <intent-filter>
+            <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+        </intent-filter>
+    </receiver>
+
+    </application>
 </manifest>

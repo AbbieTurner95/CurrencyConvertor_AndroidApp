@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 
 public class SelectRatesFragment extends Fragment {
@@ -104,7 +106,6 @@ public class SelectRatesFragment extends Fragment {
     @Override
     public void onAttach(Context context) { //check to see if instance of method is implemented
         super.onAttach(context);
-
         if (context instanceof OnRateSelectedListener) {
             mListener = (OnRateSelectedListener) context;
         } else {

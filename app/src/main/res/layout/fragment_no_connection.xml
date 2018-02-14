@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gunMetal"
-    tools:context="android.example.com.ratescurrencyapp.NoConnectionActivity"
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -19,7 +18,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/small_type_writing_medium"
         android:gravity="center"
-        android:text="If you can see this page it means theres a problem with your internet!"
+        android:text="@string/no_conenction_text1"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
@@ -37,7 +36,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/small_type_writing"
         android:gravity="center"
-        android:text="We cant get live rates with no internet! :( "
+        android:text="@string/no_connection_text2"
         android:textColor="@color/greyBlue"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
@@ -54,7 +53,7 @@
         android:layout_marginStart="8dp"
         android:fontFamily="@font/small_type_writing"
         android:gravity="center"
-        android:text="Please connect and try again!"
+        android:text="@string/please_connect_and_try_again"
         android:textColor="@color/maxYellow"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
