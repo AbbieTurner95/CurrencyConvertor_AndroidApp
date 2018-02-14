@@ -10,6 +10,9 @@
     <string name="rates_string">Bewertung</string>
     <string name="updated_rates_string">Preise zuletzt aktualisiert</string>
     <string name="CD_background">Hintergrund</string>
+    <string name="no_conenction_text1">Wenn Sie diese Seite sehen können, gibt es ein Problem mit Ihrer Verbindung!</string>
+    <string name="no_connection_text2">Wir können keine Live-Raten ohne Verbindung bekommen! :(</string>
+    <string name="please_connect_and_try_again">Bitte verbinden und versuchen Sie es erneut!</string>
 </resources>
 
 

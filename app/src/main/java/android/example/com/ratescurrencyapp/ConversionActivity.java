@@ -89,7 +89,6 @@ public class ConversionActivity extends AppCompatActivity {
         });
     }
 
-
     /* Maths conversion to work out conversion of chosen rates */
     private double convertFromBase(double amount, Rate rate) {
         return amount * rate.getRate();
@@ -98,6 +97,4 @@ public class ConversionActivity extends AppCompatActivity {
     private double convertToBase(double amount, Rate rate) {
         return amount * 1 / rate.getRate();
     }
-
-
 }

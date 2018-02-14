@@ -10,4 +10,7 @@
     <string name="rates_string">Taux </string>
     <string name="updated_rates_string">Tarifs mis à jour</string>
     <string name="CD_background">Contexte</string>
+    <string name="no_conenction_text1">Si vous pouvez voir cette page cela signifie qu\'il y a un problème avec votre connexion!</string>
+    <string name="no_connection_text2">Nous ne pouvons pas obtenir des tarifs en direct sans connexion! :(</string>
+    <string name="please_connect_and_try_again">Veuillez vous connecter et réessayer!</string>
 </resources>

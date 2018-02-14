@@ -10,4 +10,7 @@
     <string name="rates_string">Ставка</string>
     <string name="updated_rates_string">Цены обновлены</string>
     <string name="CD_background">Задний план</string>
+    <string name="no_conenction_text1">Если вы видите эту страницу, это означает, что проблема с вашим соединением!</string>
+    <string name="no_connection_text2">Мы не можем получить прямые тарифы без подключения! :(</string>
+    <string name="please_connect_and_try_again">Пожалуйста, подключитесь и попробуйте еще раз!</string>
 </resources>

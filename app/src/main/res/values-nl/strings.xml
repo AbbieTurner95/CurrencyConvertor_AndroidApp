@@ -10,6 +10,9 @@
     <string name="rates_string">Tarief </string>
     <string name="updated_rates_string">Tarieven voor het laatst bijgewerkt </string>
     <string name="CD_background">Achtergrond</string>
+    <string name="no_conenction_text1">Als u deze pagina kunt zien, betekent dit dat er een probleem is met uw verbinding!</string>
+    <string name="no_connection_text2">We kunnen geen live-tarieven krijgen zonder verbinding! :(</string>
+    <string name="please_connect_and_try_again">Maak verbinding en probeer het opnieuw!</string>
 </resources>
 
 

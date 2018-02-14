@@ -10,9 +10,8 @@
     <string name="updated_rates_string">Rates last updated </string>
     <string name="CD_background">Background</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="no_conenction_text1">If you can see this page it means theres a problem with your internet!</string>
-    <string name="no_connection_text2">We cant get live rates with no internet! :(</string>
+    <string name="no_conenction_text1">If you can see this page it means theres a problem with your connection!</string>
+    <string name="no_connection_text2">We cant get live rates with no connection! :(</string>
     <string name="please_connect_and_try_again">Please connect and try again!</string>
 </resources>

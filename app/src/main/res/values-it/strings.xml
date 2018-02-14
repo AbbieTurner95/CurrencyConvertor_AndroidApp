@@ -10,4 +10,7 @@
     <string name="rates_string">Vota</string>
     <string name="updated_rates_string">Tariffe aggiornate</string>
     <string name="CD_background">Sfondo</string>
+    <string name="no_conenction_text1">Se riesci a vedere questa pagina significa che c\'è un problema con la tua connessione!</string>
+    <string name="no_connection_text2">Non possiamo ottenere tariffe live senza connessione! :(</string>
+    <string name="please_connect_and_try_again">Connettiti e riprova!</string>
 </resources>

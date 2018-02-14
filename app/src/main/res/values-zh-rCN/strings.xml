@@ -10,4 +10,7 @@
     <string name="rates_string">率</string>
     <string name="updated_rates_string">最后更新的价格</string>
     <string name="CD_background">背景</string>
+    <string name="no_conenction_text1">如果你能看到这个页面，这意味着你的连接有问题！</string>
+    <string name="no_connection_text2">我们无法获得没有任何联系的实时费率！:(</string>
+    <string name="please_connect_and_try_again">请连接并重试！</string>
 </resources>

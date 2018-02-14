@@ -10,6 +10,9 @@
     <string name="rates_string">   معدل </string>
     <string name="updated_rates_string">  تم تحديث آخر تحديث </string>
     <string name="CD_background"> خلفية</string>
+    <string name="no_conenction_text1">إذا كنت تستطيع أن ترى هذه الصفحة فهذا يعني أن هناك مشكلة مع اتصالك!</string>
+    <string name="no_connection_text2">نحن غير قادر على الحصول على أسعار حية مع أي اتصال! :(</string>
+    <string name="please_connect_and_try_again">يرجى الاتصال والمحاولة مرة أخرى!</string>
 </resources>
 
 

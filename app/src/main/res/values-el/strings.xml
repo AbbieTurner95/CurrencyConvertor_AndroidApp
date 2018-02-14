@@ -10,4 +10,7 @@
     <string name="rates_string">Τιμή </string>
     <string name="updated_rates_string">Οι τιμές ενημερώθηκαν τελευταία</string>
     <string name="CD_background">Ιστορικό</string>
+    <string name="no_conenction_text1">Αν μπορείτε να δείτε αυτή τη σελίδα σημαίνει ότι υπάρχει ένα πρόβλημα με τη σύνδεσή σας!</string>
+    <string name="no_connection_text2">Δεν μπορούμε να λάβουμε live rates χωρίς σύνδεση! :(</string>
+    <string name="please_connect_and_try_again">Συνδεθείτε και δοκιμάστε ξανά!</string>
 </resources>
